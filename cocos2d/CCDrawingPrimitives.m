@@ -146,6 +146,38 @@ void ccDrawLine( CGPoint origin, CGPoint destination )
 	CC_INCREMENT_GL_DRAWS(1);
 }
 
+void ccDrawLines( const CGPoint *lines, NSUInteger numberOfPoints)
+{
+    lazy_init();
+    
+    [shader_ use];
+    [shader_ setUniformsForBuiltins];
+    [shader_ setUniformLocation:colorLocation_ with4fv:(GLfloat*) &color_.r count:1];
+    
+    ccGLEnableVertexAttribs( kCCVertexAttribFlag_Position );
+    
+    // XXX: Mac OpenGL error. arrays can't go out of scope before draw is executed
+    ccVertex2F newLines[numberOfPoints];
+    
+    // iPhone and 32-bit machines optimization
+    if( sizeof(CGPoint) == sizeof(ccVertex2F) )
+        glVertexAttribPointer(kCCVertexAttrib_Position, 2, GL_FLOAT, GL_FALSE, 0, lines);
+    
+    else
+    {
+        // Mac on 64-bit
+        for( NSUInteger i=0; i<numberOfPoints;i++)
+            newLines[i] = (ccVertex2F) { lines[i].x, lines[i].y };
+        
+        glVertexAttribPointer(kCCVertexAttrib_Position, 2, GL_FLOAT, GL_FALSE, 0, newLines);
+    }
+    
+    glDrawArrays(GL_LINES, 0, (GLsizei) numberOfPoints);
+
+    CC_INCREMENT_GL_DRAWS(1);
+}
+
+
 void ccDrawRect( CGPoint origin, CGPoint destination )
 {
 	ccDrawLine(CGPointMake(origin.x, origin.y), CGPointMake(destination.x, origin.y));

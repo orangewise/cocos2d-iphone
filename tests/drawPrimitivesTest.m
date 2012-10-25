@@ -162,6 +162,17 @@ Class restartAction()
 	ccDrawLine( ccp(0, 0), ccp(s.width, s.height) );
 
 	CHECK_GL_ERROR_DEBUG();
+    
+    // draw 2 simple lines
+    // The default state is:
+    // Line Width: 2
+    // color: 255,255,255,255 (white, non-transparent)
+    // Anti-Aliased
+    glLineWidth( 2.0f );
+    CGPoint lines[4] = {ccp(60,300), ccp(100,300), ccp(60,310), ccp(100,310)};
+    ccDrawLines(lines,4);
+    
+	CHECK_GL_ERROR_DEBUG();
 
 	// line: color, width, aliased
 	// glLineWidth > 1 and GL_LINE_SMOOTH are not compatible
