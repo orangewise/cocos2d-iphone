@@ -445,8 +445,8 @@
 	CGContextDrawImage(context, CGRectMake(0.0f, 0.0f, tx, ty), iref);
 	CGImageRef image = CGBitmapContextCreateImage(context);
 	
-	CGImageRelease(iref);
 	CGContextRelease(context);
+	CGImageRelease(iref);
 	CGColorSpaceRelease(colorSpaceRef);
 	CGDataProviderRelease(provider);
 	
@@ -477,7 +477,7 @@
 #if __CC_PLATFORM_IOS
 	
 	UIImage* image	= [[UIImage alloc] initWithCGImage:imageRef scale:CC_CONTENT_SCALE_FACTOR() orientation:UIImageOrientationUp];
-	NSData *imageData;
+	NSData *imageData = nil;
 
 	if( format == kCCImageFormatPNG )
 		imageData = UIImagePNGRepresentation( image );

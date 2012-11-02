@@ -1,5 +1,4 @@
-
-version 2.1-beta3  xx-Oct-2012
+version 2.1-beta3  xx-Nov-2012
 . [NEW] Clipping Node: New node that let's you clip objects inside it. Check the demos!
 . [NEW] Node API additions:
 		Added: removeChild. Calls removeChild:cleanup: with cleanup=YES
@@ -8,8 +7,11 @@ version 2.1-beta3  xx-Oct-2012
 		Added: removeAllChildren. Calls removeAllChildrenWithCleanup: with cleanup=YES
 . [NEW] RenderTexture: Supports "auto rendering" its children to the texture. No need to call being/end
 . [NEW] Scheduler: It is possible to schedule blocks too.
+. [NEW] Tests: Added 'JS CocosDragon'. Shows the power of CocosBuilder + JS
 . [FIX] Actions: TargetedAction can be copied. Calls super correctly
 		Blink: "stop" restores original "visibility" state
+		BezierTo: works with Repeat (issue #1008)
+		CatmullRom: No "bouncing". Fixed interpolation (issue #1441)
 . [FIX] Director: Fixed possible retain cycle with the delegate
 		Fixed possible crash when purgeCacheData is called before the view is initialized (issue #1440)
 . [FIX] Dispatcher: Queueing nested events works as expected (issue #1279, #1410)
@@ -49,8 +51,10 @@ version 2.1-beta3  xx-Oct-2012
 		Chipmunk API is compatible with Chipmunk-JS
 		CocosBuilder Reader supports "outlets", Animation callbacks, and improved JSB API
 		Better registration code
+. [3RD] Chipmunk: Updated to v6.1.2.
+		Chipmunk is a git submodule now.
 . [3RD] CocosBuilder Reader: Updated to v2.1
-. [3RD] SpiderMonkey: Updated to v16.0.1
+. [3RD] SpiderMonkey: Updated to v17-beta
 		Added armv7s support
 
 version 2.1-beta2 13-Sept-2012
