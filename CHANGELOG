@@ -1,10 +1,15 @@
-version 2.1-beta3  xx-Nov-2012
+version 2.1-beta4  XX-Dec-2012
+. [FIX] Transitions: Fixed possible memory leak in some tranitions.
+
+version 2.1-beta3  7-Nov-2012
 . [NEW] Clipping Node: New node that let's you clip objects inside it. Check the demos!
 . [NEW] Node API additions:
 		Added: removeChild. Calls removeChild:cleanup: with cleanup=YES
 		Added: removeChildByTag. Calls removeChildByTag:cleanup: with cleanup=YES
 		Added: removeFromParent. Calls removeFromParentAndCleanup: with cleanup=YES
 		Added: removeAllChildren. Calls removeAllChildrenWithCleanup: with cleanup=YES
+. [NEW] EventDispatcher: Adds support for gestures in OSX
+. [NEW] Layer: Added support of gestures in OSX
 . [NEW] RenderTexture: Supports "auto rendering" its children to the texture. No need to call being/end
 . [NEW] Scheduler: It is possible to schedule blocks too.
 . [NEW] Tests: Added 'JS CocosDragon'. Shows the power of CocosBuilder + JS
@@ -36,11 +41,14 @@ version 2.1-beta3  xx-Nov-2012
 		unscheduleAllSelectors -> unscheduleAll (since it also unschedules blocks)
 		unscheduleAllSelectorsForTarget -> unscheduleAllForTarget (since it also unschedules blocks)
 		Old methods can be called, but are deprecated.
+		isTargetPaused: fixed logic error
+		Timer: fixed logic error in non repeat-forever timers
 . [FIX] Templates: Autoration can be overriden in runtime on iOS 6
 		Fixed some grammar errors
 . [FIX] TextureAtlas: Uses Orphaning + glMapBuffer. Performance improve when rendering serveral particles
 . [FIX] Tests: Watermelon With Me uses new Chipmunk API
 		Added new JS tests for Chipmunk (Buoyancy, Pyramid, Joints, etc...)
+		EventTest (Mac): Fixed memory leaks, dangling pointer and logic
 . [FIX] Texture: Improved assert when updating filter on NPOT textures
 . [FIX] TextureCache: filenames are standarized before adding them into the cache
 . [FIX] TMX Tiled Maps: Resused code is re-initialized in a faster
@@ -58,6 +66,9 @@ version 2.1-beta3  xx-Nov-2012
 . [3RD] CocosBuilder Reader: Updated to v2.1
 . [3RD] SpiderMonkey: Updated to v17-beta
 		Added armv7s support
+. [3RD] uthash: Updated to v1.9.7
+. [3RD] ThoMoNetwork / Fragaria: Removed. No longer bundled with cocos2d.
+
 
 version 2.1-beta2 13-Sept-2012
 . [NEW] Templates: Support for new iPhone5 resolution: Added Default-568h@2x.png in templates and cocos2d-ios.xcodeproj

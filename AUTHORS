@@ -31,6 +31,9 @@ People/companies who were/are contributing code to cocos2d for iPhone (alphabeti
 	Fixed some grammar errors in the Templates
 	Fixed interpolation in CatmullRom action
 
+* HarrisonXi (https://github.com/HarrisonXi):
+	Fixed some logic errors in the Scheduler and Timer
+
 * Ian Oliver (http://www.trivialtechnology.com)
 	GLProgram: Better error reporting on link
 
@@ -63,6 +66,8 @@ People/companies who were/are contributing code to cocos2d for iPhone (alphabeti
 	Author of Clipping Node
 	Author of 9 tests for Clipping Node
 	Added support for Stencil Buffer in the GLView
+	Fixed EventTests: memory leaks, dangling pointer and logic
+	Added support for gestures in OSX
 
 * Robert J Payne (http://www.zwopple.com/)
 	Initial PVR v3 file format support
@@ -73,6 +78,9 @@ People/companies who were/are contributing code to cocos2d for iPhone (alphabeti
 	Author of CCPhysicsDebugNode and CCPhysicsSprite
 	Fix assert on Texture when updating filter on NPOT textures
 	Director iOS: Returns correct GL value for coordinates event in custom projections	
+
+* Vargusz (https://github.com/vargusz)
+	Fixed possible memory leak in RadialTransitions
 
 * Viktor Lidholt (http://www.cocosbuilder.com)
 	LabelTTF loads custom fonts correctly on Mac
