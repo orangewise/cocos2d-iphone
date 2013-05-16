@@ -597,20 +597,20 @@ Class restartAction()
 
 		s = [p contentSize];
 		// LEFT
-		sprite = [CCSprite spriteWithFile:@"grossini.png"];
-		sprite.scale = 0.5f;
-		[p addChild:sprite z:0];
-		[sprite setPosition:ccp(s.width/4*1, s.height/2)];
-		orbit = [CCOrbitCamera actionWithDuration:2 radius:1 deltaRadius:0 angleZ:0 deltaAngleZ:360 angleX:0 deltaAngleX:0];
-		[sprite runAction: [CCRepeatForever actionWithAction:orbit]];
-
-		// CENTER
-		sprite = [CCSprite spriteWithFile:@"grossini.png"];
-		sprite.scale = 1.0f;
-		[p addChild:sprite z:0];
-		[sprite setPosition:ccp(s.width/4*2, s.height/2)];
-		orbit = [CCOrbitCamera actionWithDuration:2 radius:1 deltaRadius:0 angleZ:0 deltaAngleZ:360 angleX:45 deltaAngleX:0];
-		[sprite runAction: [CCRepeatForever actionWithAction:orbit]];
+//		sprite = [CCSprite spriteWithFile:@"grossini.png"];
+//		sprite.scale = 0.5f;
+//		[p addChild:sprite z:0];
+//		[sprite setPosition:ccp(s.width/4*1, s.height/2)];
+//		orbit = [CCOrbitCamera actionWithDuration:2 radius:1 deltaRadius:0 angleZ:0 deltaAngleZ:360 angleX:0 deltaAngleX:0];
+//		[sprite runAction: [CCRepeatForever actionWithAction:orbit]];
+//
+//		// CENTER
+//		sprite = [CCSprite spriteWithFile:@"grossini.png"];
+//		sprite.scale = 1.0f;
+//		[p addChild:sprite z:0];
+//		[sprite setPosition:ccp(s.width/4*2, s.height/2)];
+//		orbit = [CCOrbitCamera actionWithDuration:2 radius:1 deltaRadius:0 angleZ:0 deltaAngleZ:360 angleX:45 deltaAngleX:0];
+//		[sprite runAction: [CCRepeatForever actionWithAction:orbit]];
 
 
 		// RIGHT
@@ -618,8 +618,8 @@ Class restartAction()
 		sprite.scale = 2.0f;
 		[p addChild:sprite z:0];
 		[sprite setPosition:ccp(s.width/4*3, s.height/2)];
-		orbit = [CCOrbitCamera actionWithDuration:2 radius:1 deltaRadius:0 angleZ:0 deltaAngleZ:360 angleX:90 deltaAngleX:-45],
-		[sprite runAction: [CCRepeatForever actionWithAction:orbit]];
+		orbit = [CCOrbitCamera actionWithDuration:2 radius:1 deltaRadius:0 angleZ:0 deltaAngleZ:360 angleX:90 deltaAngleX:-45];
+[sprite runAction: [CCRepeatForever actionWithAction:orbit]];
 
 
 		// PARENT
